@@ -1,27 +1,22 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import GuessCount from './GuessCount';
+import Card from './Card';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+      <div className="memory">
+        <GuessCount guesses={0}/> 
+        <Card card=":-)" feedback="hidden" /> 
+        <Card card=":-D" feedback="justMatched" />
+        <Card card="<3" feedback="justMismatched" />
+        <Card card=":-P" feedback="visible" />
+        <Card card=":-S" feedback="visible" />
+        <Card card=":-(" feedback="justMatched" />
+         
       </div>
-    );
+    )
   }
 }
 
