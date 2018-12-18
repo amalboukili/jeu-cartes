@@ -8,7 +8,7 @@ import GuessCount from './GuessCount'
 import HallOfFame, { FAKE_HOF } from './HallOfFame';
 
 const SIDE = 6
-const SYMBOLS = '🎉😍💖😺🎩🐶🐱🐬💫🍎🍌🍓🍟🎀🎊☀☂🍕🍔🍳🍪🎂🍰'
+const SYMBOLS = '🎉😍💖😺🎩🐶🐱🐬💫🍎🍌🍓🍟🎀🎊☀☂🍕🍔🍳🍪🎂🍰👩‍💼♣🎄🎃🎆♀🏠👩‍✈💂‍♀🏆'
 
 class App extends Component {
   cards = this.generateCards()
@@ -32,7 +32,7 @@ class App extends Component {
     const won = new Date().getSeconds() % 2 === 0
     return (
       <div className="memory">
-        <GuessCount guesses={0} />
+        <GuessCount />
         {this.cards.map((card, index) =>(
           <Card card={card} 
           feedback="visible" 
@@ -40,8 +40,10 @@ class App extends Component {
           onClick={this.handleCardClick} />
         ))}
         
-        {won && <p><HallOfFame entries={FAKE_HOF}/></p>}
+        {won && <HallOfFame entries={FAKE_HOF}/>}
       </div>
+   
+
     )
   }
 }
