@@ -13,6 +13,12 @@ const SYMBOLS = '🎉😍💖😺🎩🐶🐱🐬💫🍎🍌🍓🍟🎀🎊☀
 class App extends Component {
   cards = this.generateCards()
 
+  // constructor(props){
+  //   super(props)
+  //   this.handleCardClick = this.handleCardClick.bind(this)
+  // }
+
+
   generateCards() {
     const result = []
     const size = SIDE * SIDE
@@ -24,8 +30,9 @@ class App extends Component {
     return shuffle(result)
   }
 
-  handleCardClick(card) {
-    console.log(card, 'clicked')
+  //autobind
+  handleCardClick = card => {
+    console.log(card, 'clicked', this)
   }
 
   render() {
